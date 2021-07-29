@@ -1,5 +1,9 @@
 <launch>
+  <arg name="launch_rviz" default="true"/>
 
+  <arg name="ns" default=""/>
+
+  <arg name="machine" default=""/>
   <!-- By default, we do not start a database (it can be large) -->
   <arg name="db" default="false" />
   <!-- Allow user to specify database location -->
@@ -22,10 +26,12 @@
     <arg name="fake_execution" value="false"/>
     <arg name="info" value="true"/>
     <arg name="debug" value="$(arg debug)"/>
+    <arg name="machine" value="$(arg machine)"/>
+    <arg name="ns" value="$(arg ns)"/>
   </include>
 
-  <!-- Run Rviz and load the default config to see the state of the move_group node -->
-  <include file="$(find ar3_moveit_config)/launch/moveit_rviz.launch">
+  <!-- Run Rviz and load the default config to see the state of the move_group node-->
+  <include file="$(find ar3_moveit_config)/launch/moveit_rviz.launch" if="$(arg launch_rviz)">
     <arg name="config" value="true"/>
     <arg name="debug" value="$(arg debug)"/>
   </include>
@@ -36,6 +42,6 @@
   </include>
 
   <!-- World to base transform -->
-  <node pkg="tf" type="static_transform_publisher" name="world_broadcaster" args = "0 0 0 0 0 0 world base_link 10" />
+  <!--<node pkg="tf" type="static_transform_publisher" name="world_broadcaster" args = "0 0 0 0 0 0 world base_link 10" />-->
 
 </launch>
