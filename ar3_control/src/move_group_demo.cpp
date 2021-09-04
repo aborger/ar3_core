@@ -111,7 +111,7 @@ int main(int argc, char** argv)
 
   // Start the demo
   // ^^^^^^^^^^^^^^^^^^^^^^^^^
-  visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to start the demo");
+  //visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to start the demo");
 
   // Planning to a Pose goal
   // ^^^^^^^^^^^^^^^^^^^^^^^
@@ -144,7 +144,7 @@ int main(int argc, char** argv)
   visual_tools.publishText(text_pose, "Pose Goal", rvt::WHITE, rvt::XLARGE);
   visual_tools.publishTrajectoryLine(my_plan.trajectory_, joint_model_group->getLinkModel("link_6"), joint_model_group, rvt::LIME_GREEN);
   visual_tools.trigger();
-  visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to execute pose goal");
+  //visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to execute pose goal");
 
   // Moving to a pose goal
   // ^^^^^^^^^^^^^^^^^^^^^
@@ -190,7 +190,7 @@ int main(int argc, char** argv)
   visual_tools.publishText(text_pose, "Joint Space Goal", rvt::WHITE, rvt::XLARGE);
   visual_tools.publishTrajectoryLine(my_plan.trajectory_, joint_model_group->getLinkModel("link_6"), joint_model_group, rvt::LIME_GREEN);
   visual_tools.trigger();
-  visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to execute joint-space goal");
+  //visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to execute joint-space goal");
 
   move_group.move();
 
@@ -266,7 +266,7 @@ int main(int argc, char** argv)
   visual_tools.publishTrajectoryLine(my_plan.trajectory_, joint_model_group->getLinkModel("link_6"), joint_model_group, rvt::LIME_GREEN);
   visual_tools.trigger();
 
-  visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to execute path-constrained pose goal");
+  //visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to execute path-constrained pose goal");
 
   move_group.move();
 
@@ -319,12 +319,12 @@ int main(int argc, char** argv)
   for (std::size_t i = 0; i < waypoints.size(); ++i)
     visual_tools.publishAxisLabeled(waypoints[i], "pt" + std::to_string(i), rvt::SMALL);
   visual_tools.trigger();
-  visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to execute cartesian path");
+  //visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to execute cartesian path");
 
   my_plan.trajectory_ = trajectory;
   move_group.execute(my_plan);
 
-  visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to end the demo");
+  //visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to end the demo");
 
   ros::shutdown();
   return 0;
