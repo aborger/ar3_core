@@ -4,6 +4,7 @@
   <arg name="ns" default=""/>
 
   <arg name="machine" default=""/>
+  <arg name="display_machine" default=""/>
   <!-- By default, we do not start a database (it can be large) -->
   <arg name="db" default="false" />
   <!-- Allow user to specify database location -->
@@ -34,6 +35,7 @@
   <include file="$(find ar3_moveit_config)/launch/moveit_rviz.launch" if="$(arg launch_rviz)">
     <arg name="config" value="true"/>
     <arg name="debug" value="$(arg debug)"/>
+    <arg name="machine" value="$(arg display_machine)"/>
   </include>
 
   <!-- If database loading was enabled, start mongodb as well -->
