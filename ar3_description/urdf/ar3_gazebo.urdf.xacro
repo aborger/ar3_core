@@ -206,6 +206,9 @@
     <axis xyz="0 0 1"/>
     <limit lower="-2.5848326" upper="2.5848326" effort="100" velocity="100"/>
   </joint>  
+
+  <joint name=""
+
   <transmission name="transmission_1">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="joint_1">
@@ -292,3 +295,4 @@
       <selfCollide>true</selfCollide>
   </gazebo>
 </robot>
+

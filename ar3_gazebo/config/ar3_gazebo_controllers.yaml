@@ -34,3 +34,19 @@ ar3/controllers/position:
             trajectory: 0.5
             goal: 0.02
 
+# Joint Trajectory Controller
+ar3/controllers/grip_position:
+    type: "position_controllers/JointTrajectoryController"
+    joints: 
+        - actuator_joint_1
+        - actuator_joint_2
+    constraints:
+        goal_time: 0.5
+        actuator_1:
+            trajectory: 0.5
+            goal: 0.02
+        actuator_2:
+            trajectory: 0.5
+            goal: 0.02
+
+

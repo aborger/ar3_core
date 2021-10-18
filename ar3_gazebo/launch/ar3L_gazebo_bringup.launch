@@ -2,19 +2,20 @@
 <launch>
     <arg name="launch_world" default="true"/>
     <arg name="ns" default="left"/>
+    <arg name="x_pos" default="0"/>
 
     <include file="$(find gazebo_ros)/launch/empty_world.launch" if="$(arg launch_world)"/>
 
 
     <!-- URDF -->
-    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find ar3_description)/urdf/$(arg ns)_ar3_gazebo.urdf.xacro" />
+    <param name="robot_description" command="$(find xacro)/xacro $(find ar3_description)/urdf/left_ar3_gazebo.urdf.xacro" />
 
     <!-- Load joint controller configurations -->
     <rosparam file="$(find ar3_gazebo)/config/ar3_gazebo_controllers.yaml" command="load"/>
 
     <!-- Load controllers -->
     <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
-        args="--namespace=/$(arg ns) /$(arg ns)/joint_state_controller /$(arg ns)/ar3/controllers/position
+        args="--namespace=/$(arg ns) /$(arg ns)/joint_state_controller /$(arg ns)/ar3/controllers/position /$(arg ns)/ar3/controllers/grip_position
         --shutdown-timeout 1"/>
 
     <!-- Convert joint states to TF transforms for rviz -->

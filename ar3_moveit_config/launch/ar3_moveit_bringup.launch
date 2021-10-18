@@ -32,13 +32,13 @@
   </include>
 
   <!-- Run Rviz and load the default config to see the state of the move_group node -->
-  <!-- Not using RVIZ Right now
-  <include file="$(find ar3_moveit_config)/launch/moveit_rviz.launch">
+
+  <include file="$(find ar3_moveit_config)/launch/moveit_rviz.launch" if="$(arg launch_rviz)">
     <arg name="config" value="true"/>
     <arg name="debug" value="$(arg debug)"/>
     <arg name="machine" value="$(arg display_machine)"/>
   </include>
-  -->
+  
 
   <!-- If database loading was enabled, start mongodb as well -->
   <include file="$(find ar3_moveit_config)/launch/default_warehouse_db.launch" if="$(arg db)">
