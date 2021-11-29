@@ -33,6 +33,11 @@
       </geometry>
     </collision>
   </link>
+  <joint name="joint_world" type="fixed">
+    <parent link="world_base"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
   <link name="link_1">
     <inertial>
       <origin rpy="0 0 0" xyz="-0.022706 0.04294 -0.12205"/>
