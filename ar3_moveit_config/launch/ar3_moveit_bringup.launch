@@ -15,10 +15,12 @@
 
   <!-- By default, don't load robot description -->
   <arg name="load_robot_description" default="false"/>
+  <arg name="simulated" default="false"/>
 
   <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
   <include file="$(find ar3_moveit_config)/launch/planning_context.launch">
     <arg name="load_robot_description" value="$(arg load_robot_description)"/>
+    <arg name="simulated" value="$(arg simulated)"/>
   </include>
 
   <!-- Run the main MoveIt executable without trajectory execution (we do not have controllers configured by default) -->
