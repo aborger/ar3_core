@@ -1,6 +1,6 @@
 ar3:
     hardware_driver:
-        serial_port: "COM4" # /dev/ttyACM0
+        serial_port: "/dev/ttyACM0" # /dev/ttyACM0 #COM4
         baudrate: 115200
         encoder_steps_per_deg: # encoder steps per joint angle degree
             joint_1: 227.5555555555556 # default 227.5555555555556
