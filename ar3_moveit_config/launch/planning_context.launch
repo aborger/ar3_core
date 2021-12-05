@@ -8,12 +8,12 @@
   <arg name="robot_description" default="robot_description"/>
 
   <!-- Load universal robot description format (URDF) -->
-  <param if="$(arg load_robot_description)" name="$(arg robot_description)" command="$(find xacro)/xacro --inorder $(find ar3_description)/urdf/ar3.urdf.xacro"/>
+  <param if="$(arg load_robot_description)" name="$(arg robot_description)" command="$(find xacro)/xacro --inorder $(find ar3_description)/urdf/ar3_gazebo.urdf.xacro"/>
 
   <!-- The semantic description that corresponds to the URDF -->
-  <param name="$(arg robot_description)_semantic" textfile="$(find ar3_moveit_config)/config/ar3.srdf" if="$(eval arg('simulated') == false)"/>
+  <!--<param name="$(arg robot_description)_semantic" textfile="$(find ar3_moveit_config)/config/ar3.srdf" if="$(eval arg('simulated') == false)"/>-->
   <!-- The loading of semantic depends on if its simulation or not, this could be made into one line -->
-  <param name="$(arg robot_description)_semantic" textfile="$(find ar3_moveit_config)/config/ar3_gazebo.srdf" if="$(eval arg('simulated') == true)"/>
+  <param name="$(arg robot_description)_semantic" textfile="$(find ar3_moveit_config)/config/ar3_gazebo.srdf"/>
   
   <!-- Load updated joint limits (override information from URDF) -->
   <group ns="$(arg robot_description)_planning">

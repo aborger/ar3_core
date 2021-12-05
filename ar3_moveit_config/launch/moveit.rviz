@@ -14,7 +14,7 @@ Panels:
         - /PointCloud21
         - /Image1
       Splitter Ratio: 0.7425600290298462
-    Tree Height: 650
+    Tree Height: 419
   - Class: rviz/Help
     Name: Help
   - Class: rviz/Views
@@ -80,11 +80,30 @@ Visualization Manager:
           Expand Link Details: false
           Expand Tree: false
           Link Tree Style: Links in Alphabetic Order
+          actuator_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          actuator_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          actuator_3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           base_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
+          camera_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           link_1:
             Alpha: 1
             Show Axes: false
@@ -111,6 +130,11 @@ Visualization Manager:
             Show Trail: false
             Value: true
           link_6:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          palm:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -145,7 +169,7 @@ Visualization Manager:
         Goal State Color: 250; 128; 0
         Interactive Marker Size: 0
         Joint Violation Color: 255; 0; 255
-        Planning Group: manipulator
+        Planning Group: gripper
         Query Goal State: true
         Query Start State: false
         Show Workspace: false
@@ -168,11 +192,30 @@ Visualization Manager:
           Expand Link Details: false
           Expand Tree: false
           Link Tree Style: Links in Alphabetic Order
+          actuator_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          actuator_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          actuator_3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           base_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
+          camera_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           link_1:
             Alpha: 1
             Show Axes: false
@@ -199,6 +242,11 @@ Visualization Manager:
             Show Trail: false
             Value: true
           link_6:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          palm:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -273,25 +321,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 1.3402658700942993
+      Distance: 1.1200733184814453
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.0122700035572052
-        Y: -0.004962831735610962
-        Z: 3.0616433832619805e-7
+        X: -0.2494017481803894
+        Y: -0.5778816938400269
+        Z: 5.445829174277605e-7
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.4547969102859497
+      Pitch: 0.704797089099884
       Target Frame: world
       Value: XYOrbit (rviz)
-      Yaw: 5.479998588562012
+      Yaw: 1.0618113279342651
     Saved: ~
 Window Geometry:
   Displays:

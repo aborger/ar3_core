@@ -2,7 +2,10 @@
 <launch>
     <arg name="launch_world" default="true"/>
     <arg name="ns" default="left"/>
-    <arg name="x_pos" default="0"/>
+    <arg name="x_pos" default="0"/> 
+    <!-- Note the x_pos arg can be given to either the urdf, or the spawn_model. 
+        with the urdf commands will be with respect to the world 
+        whereas spawn_model will be with respect to the robot base. -->
 
     <include file="$(find gazebo_ros)/launch/empty_world.launch" if="$(arg launch_world)"/>
 

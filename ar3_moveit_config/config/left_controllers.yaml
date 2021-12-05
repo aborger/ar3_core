@@ -17,4 +17,5 @@ controller_list:
       joints:
           - actuator_joint_1
           - actuator_joint_2
+          - actuator_joint_3
 
