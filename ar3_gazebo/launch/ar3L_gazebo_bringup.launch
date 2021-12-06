@@ -3,6 +3,7 @@
     <arg name="launch_world" default="true"/>
     <arg name="ns" default="left"/>
     <arg name="x_pos" default="0"/>
+    <arg name="machine" default=""/>
 
     <include file="$(find gazebo_ros)/launch/empty_world.launch" if="$(arg launch_world)"/>
 
@@ -14,7 +15,7 @@
     <rosparam file="$(find ar3_gazebo)/config/ar3_gazebo_controllers.yaml" command="load"/>
 
     <!-- Load controllers -->
-    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" machine="$(arg machine)"
         args="--namespace=/$(arg ns) /$(arg ns)/joint_state_controller /$(arg ns)/ar3/controllers/position /$(arg ns)/ar3/controllers/grip_position
         --shutdown-timeout 1"/>
 
