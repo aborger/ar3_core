@@ -1,5 +1,5 @@
 controller_list:
-    - name: "/grip/ar3/controllers/grip_position"
+    - name: "/left/gripper/grip_position"
       action_ns: follow_joint_trajectory
       type: FollowJointTrajectory
       default: true
