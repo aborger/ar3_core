@@ -27,8 +27,10 @@
         <param name="tf_prefix" value="$(arg ns)"/>
     </node>
 
+    <param name="robot_model" command="$(find xacro)/xacro '$(find marsha_description)/urdf/arm_gripper.urdf.xacro'"/>
+
     <!-- Spawns model -->
     <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" 
-        args="-param robot_description -urdf -model $(arg ns)_ar3" respawn="false" output="screen"/>
+        args="-param robot_model -urdf -model $(arg ns)_ar3" respawn="false" output="screen"/>
 
 </launch>
