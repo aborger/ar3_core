@@ -13,6 +13,15 @@ ar3/controllers/position:
         - joint_4  
         - joint_5  
         - joint_6
+
+    #gains:
+    #    joint_1: {p: 0, d: 0, i: 0}
+    #    joint_2: {p: 0, d: 0, i: 0}
+    #    joint_3: {p: 0, d: 0, i: 0}
+    #    joint_4: {p: 0, d: 0, i: 0}
+    #    joint_5: {p: 0, d: 0, i: 0}
+    #    joint_6: {p: 0, d: 0, i: 0}
+
     constraints:
         goal_time: 0.5
         joint_1:
@@ -34,24 +43,13 @@ ar3/controllers/position:
             trajectory: 0.5
             goal: 0.02
 
-# Joint Trajectory Controller
-#ar3/controllers/grip_position:
-#    type: "position_controllers/JointTrajectoryController"
-#    joints: 
-#        - actuator_joint_1
-#        - actuator_joint_2
-#        - actuator_joint_3
-
-    #constraints:
-    #    goal_time: 0.5
-    #    actuator_1:
-    #        trajectory: 0.5
-    #        goal: 0.02
-    #    actuator_2:
-    #        trajectory: 0.5
-    #        goal: 0.02
-    #    actuator_3:
-    #        trajectory: 0.5
-    #        goal: 0.02
+# Same gains as above
+#gazebo_ros_control/pid_gains:
+#    joint_1: {p: 0, d: 0, i: 0}
+#    joint_2: {p: 0, d: 0, i: 0}
+#    joint_3: {p: 0, d: 0, i: 0}
+#    joint_4: {p: 0, d: 0, i: 0}
+#    joint_5: {p: 0, d: 0, i: 0}
+#    joint_6: {p: 0, d: 0, i: 0}
 
 
