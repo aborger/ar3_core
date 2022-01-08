@@ -1,0 +1,10 @@
+controller_list:
+    - name: "/gripper/ar3/controllers/grip_position"
+      action_ns: follow_joint_trajectory
+      type: FollowJointTrajectory
+      default: true
+      joints:
+          - actuator_joint_1
+          - actuator_joint_2
+          - actuator_joint_3
+

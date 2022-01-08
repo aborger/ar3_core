@@ -12,23 +12,28 @@ ar3:
         - joint_4
         - joint_5
         - joint_6
-      constraints:
-        goal_time: 0.5
-        joint_1:
-          trajectory: 0.5
-          goal: 0.02
-        joint_2:
-          trajectory: 0.5
-          goal: 0.02
-        joint_3:
-          trajectory: 0.5
-          goal: 0.02
-        joint_4:
-          trajectory: 0.5
-          goal: 0.02
-        joint_5:
-          trajectory: 0.5
-          goal: 0.02
-        joint_6:
-          trajectory: 0.5
-          goal: 0.02
+
+      #constraints:
+      #  goal_time: 0.5
+      #  joint_1:
+      #    trajectory: 0.5
+      #    goal: 0.02
+      #  joint_2:
+      #    trajectory: 0.5
+      #    goal: 0.02
+      #  joint_3:
+      #    trajectory: 0.5
+      #    goal: 0.02
+      #  joint_4:
+      #    trajectory: 0.5
+      #    goal: 0.02
+      #  joint_5:
+      #    trajectory: 0.5
+      #    goal: 0.02
+      #  joint_6:
+      #    trajectory: 0.5
+      #    goal: 0.02
+    effort:
+      type: effort_controllers/JointEffortController
+      joint: actuator_joint
+      pid: {p: 1.0, i: 0, d: 0}

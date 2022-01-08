@@ -3,7 +3,7 @@ import rospy
 import tf
 
 if __name__ == '__main__':
-    rospy.init_node('broadcaset_fixed')
+    rospy.init_node('broadcast_fixed')
     ns = rospy.get_namespace()
     br = tf.TransformBroadcaster()
     rate = rospy.Rate(10.0)
