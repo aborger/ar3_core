@@ -6,15 +6,24 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ar3_arm">
 
   <xacro:arg name="x_pos" default="0"/>
+  <xacro:arg name="for_moveit" default="true"/>
   
   <link name="world"/>
-  <link name="world_base"/>
+  <!-- Thin Box below arm provides collision on ground -->
+  <link name="world_base">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0.001"/>
+      <geometry>
+        <box size="2 2 0.0001"/>
+      </geometry>
+    </collision>
+  </link>
 
-<joint name="world_joint" type="fixed">
-  <parent link="world"/>
-  <child link="world_base"/>
-  <origin xyz="0 0 0" rpy="0 0 0"/>
-</joint>
+  <joint name="world_joint" type="fixed">
+    <parent link="world"/>
+    <child link="world_base"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
 
   <link name="base_link">
     <inertial>
@@ -217,8 +226,26 @@
     <axis xyz="0 0 1"/>
     <limit lower="-2.5848326" upper="2.5848326" effort="100" velocity="100"/>
   </joint>  
+  
+  <!-- Box that provides gripper collider only for moveit so gazebo does not simulate collisions -->
+  <link name="gripper_collider">
+    <xacro:if value="$(arg for_moveit)">
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 0.05"/>
+        <geometry>
+          <box size="0.1 0.1 0.05"/>
+        </geometry>
+      </collision>
+    </xacro:if>
+  </link>
 
+  <joint name="grip_collide_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="link_6"/>
+    <child link="gripper_collider"/>
+  </joint>
 
+  
   
 
   <link name="camera_link">

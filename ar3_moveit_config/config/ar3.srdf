@@ -37,7 +37,9 @@
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="gripper" parent_link="link_6" group="manipulator" />
+    <virtual_joint name="world_joint" type="fixed" parent_frame="world" child_link="base_link"/>
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="world_base" link2="base_link" reason="Adjacent"/>
     <disable_collisions link1="base_link" link2="link_1" reason="Adjacent" />
     <disable_collisions link1="link_1" link2="link_2" reason="Adjacent" />
     <disable_collisions link1="link_1" link2="link_3" reason="Never" />
@@ -47,4 +49,8 @@
     <disable_collisions link1="link_3" link2="link_6" reason="Never" />
     <disable_collisions link1="link_4" link2="link_5" reason="Adjacent" />
     <disable_collisions link1="link_5" link2="link_6" reason="Adjacent" />
+    <disable_collisions link1="link_6" link2="gripper_collider" reason="Adjacent"/>
+    <disable_collisions link1="link_5" link2="gripper_collider" reason="Adjacent"/>
+    <disable_collisions link1="link_4" link2="gripper_collider" reason="Adjacent"/>
+    
 </robot>
