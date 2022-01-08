@@ -15,14 +15,8 @@
     <rosparam file="$(find ar3_gazebo)/config/ar3_gazebo_controllers.yaml" command="load"/>
 
     <!-- Load controllers -->
-<<<<<<< HEAD
-    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" machine="$(arg machine)"
-        args="--namespace=/$(arg ns) /$(arg ns)/joint_state_controller /$(arg ns)/ar3/controllers/position /$(arg ns)/ar3/controllers/grip_position
-        --shutdown-timeout 1"/>
-=======
     <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
         args="--namespace=/$(arg ns) /$(arg ns)/joint_state_controller /$(arg ns)/ar3/controllers/position"/>
->>>>>>> a718e9f12d96609a22053387c914b3431f2f72b9
 
     <!-- Convert joint states to TF transforms for rviz -->
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
