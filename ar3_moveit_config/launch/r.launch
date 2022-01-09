@@ -1,4 +1,0 @@
-<launch>
-  <arg name="r"/>
-    <param name="semantic" textfile="$(find ar3_moveit_config)/config/ar3_$(arg r).srdf"/>
- </launch>
