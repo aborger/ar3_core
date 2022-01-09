@@ -1,0 +1,5 @@
+<launch>
+  <include file="$(find ar3_moveit_config)/launch/planning_context.launch">
+    <arg name="robot_medium" value="s"/>
+  </include>
+</launch>
