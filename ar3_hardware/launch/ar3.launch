@@ -1,0 +1,23 @@
+<launch>
+    <arg name="ns" default="left"/>
+    <ag name="jets" default="jet2"/>
+
+    <group ns="$(arg ns)">
+        <include file="$(find marsha_core)/launch/satlab_net.machine"/>
+
+        <!-- Include poses config here -->
+
+        <include file="$(find ar3_hardware)/launch/ar3_hardware_bringup.launch">
+            <arg name="machine" value="$(arg jets)"/>
+            <arg name="ns" value="$(arg ns)"/>
+        </include>
+
+        <include file="$(find ar3_moveit_config)/launch/ar3_moveit_bringup.launch">
+            <arg name="machine" value="$(arg jets)"/>
+            <arg name="ns" value="$(arg ns)"/>
+            <arg name="launch_rviz" value="true"/>
+        </include>
+
+        <node pkg="marsha_core" type="move_interface" name="move_interface" respawn="false" machine="$(arg jets)"/>
+    </group>
+</launch>
