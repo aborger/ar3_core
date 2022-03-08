@@ -1,6 +1,6 @@
 <launch>
     <arg name="ns" default="left"/>
-    <ag name="jets" default="jet2"/>
+    <arg name="jets" default="jet1"/>
 
     <group ns="$(arg ns)">
         <include file="$(find marsha_core)/launch/satlab_net.machine"/>

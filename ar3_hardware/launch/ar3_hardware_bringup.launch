@@ -1,14 +1,15 @@
 <launch>
-    <arg name="machine" default="jet2"/>
+    <arg name="machine" default="jet1"/>
     <arg name="ns" default="left"/>
 
     <rosparam file="$(find ar3_hardware)/config/controllers.yaml" command="load"/>
     <rosparam file="$(find ar3_moveit_config)/config/joint_limits.yaml" command="load"/>
     <rosparam file="$(find ar3_hardware)/config/joint_config.yaml" command="load"/>
 
-    <param name="robot_description" command="$(find xacro)/xacro $(find ar3_description)/urdf/ar3_hardware.urdf.xacro"/>
+    <param name="robot_description" command="$(find xacro)/xacro $(find ar3_description)/urdf/ar3_gazebo.urdf.xacro"/>
 
     <node name="teensy_interface" pkg="marsha_hardware" type="teensy_interface" machine="$(arg machine)"/>
+    <node name="diablo_controller" pkg="marsha_hardware" type="diablo_controller" machine="$(arg machine)"/>
 
     <node name="marsha_hardware_interface" pkg="marsha_hardware" type="marsha_hardware_interface_node" output="screen" machine="$(arg machine)"/>
 
@@ -18,7 +19,7 @@
             /$(arg ns)/ar3/controllers/position"
     />
 
-    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
     <remap from="/joint_trajectory_action" to="/position_trajectory_controller/follow_joint_trajectory"/>
 </launch>
     

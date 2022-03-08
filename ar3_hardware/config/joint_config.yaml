@@ -8,11 +8,12 @@ stepper_config:
     - joint_5
     - joint_6
     - gripper_joint
+  # neg flips direction
   deg_per_step:
-    - 1
-    - 1
-    - 1
-    - 1
-    - 1
+    - -0.0225   # 1.8 / 20 / 4
+    - 0.036     # 1.8 / 50
+    - -0.036    # 1.8 / 50
+    - 0.04378   # 1.8 / 14 / 2.938
+    - 0.18      # 1.8 / 10 
     - 1
     - 1
